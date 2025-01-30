@@ -2951,6 +2951,7 @@
 
     <!--ledc context -->
     <script src="./lenovo_files/dc.min.362e42f621262334.js"></script>
+
     <script>
       (function () {
         let $cookie = flash_fe_core_tool.$util.$cookie;
@@ -24458,6 +24459,32 @@ console.log("second else No Paas");
       });
     </script>
     <link rel="stylesheet" href="./87d0824126475762033e596897f77052.css" />
+
+    <script type="text/javascript" defer>
+      (function () {
+        const rolloutId = localStorage.getItem("getit-rollout-id");
+        const mode =
+          sessionStorage.getItem("getit-mode") ||
+          localStorage.getItem(
+            "getit-6a7f92d9-2bb8-42a1-a580-8034378388de-mode"
+          );
+        const env = sessionStorage.getItem("getit-env");
+        const live = sessionStorage.getItem("getit-live");
+        const args = { url: window.location.href };
+        if (rolloutId) args.user_rollout_id = rolloutId;
+        if (mode) args.mode = mode;
+        if (env) args.env = env;
+        if (live) args.live = live;
+        let url =
+          "https://api.dev.getit.ai/v1/agents/6a7f92d9-2bb8-42a1-a580-8034378388de/pixel";
+        url += "?" + new URLSearchParams(args);
+        const script = document.createElement("script");
+        script.src = url;
+        script.defer = true;
+        script.onerror = () => console.error("Script load error:", url);
+        document.head.appendChild(script);
+      })();
+    </script>
   </body>
   <!-- html-end static 0620-->
 </html>
