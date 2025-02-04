@@ -5977,9 +5977,12 @@
                                 name="NBPROCESSOR"
                                 data-v-048a4c9f=""
                               >
-                                <div class="title" data-v-048a4c9f="">
+                                <div class="title" data-v-048a4c9f="" onclick="clickToExplain()" style="cursor: pointer;">
                                   <span class="CItemTitle" data-v-048a4c9f=""
-                                    >Prozessor</span
+                                    >Prozessor
+                                    <span></span>
+                                      🥳</span
+                                    > </span
                                   ><!--v-if-->
                                 </div>
                                 <div
@@ -19759,6 +19762,22 @@ console.log("second else No Paas");
         script.onerror = () => console.error("Script load error:", url);
         document.head.appendChild(script);
       })();
+    </script>
+    <script>
+      function clickToExplain() {
+        console.log("EXPLAIN");
+        window.parent.postMessage(
+          {
+            type: "getit-event-bridge",
+            data: {
+              runTrigger: {
+                triggerId: "trigger-6e2c41c6-5970-4f94-bda0-6459d8241363",
+              },
+            },
+          },
+          "*"
+        );
+      }
     </script>
   </body>
   <!-- html-end static 0620-->
