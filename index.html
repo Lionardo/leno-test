@@ -5977,18 +5977,20 @@
                                 name="NBPROCESSOR"
                                 data-v-048a4c9f=""
                               >
-                                <div
-                                  class="title"
-                                  data-v-048a4c9f=""
-                                  onclick="clickToExplain()"
-                                  style="cursor: pointer"
-                                >
+                                <div class="title" data-v-048a4c9f="">
                                   <span
                                     style="cursor: pointer"
                                     class="CItemTitle"
                                     data-v-048a4c9f=""
-                                    >Prozessor ⓘ - ask agent
+                                    >Prozessor
                                   </span>
+                                  <button
+                                    style="display: inline"
+                                    class="button"
+                                    onclick="clickToExplain()"
+                                  >
+                                    <span class="sparkle">✨</span> ask agent
+                                  </button>
                                 </div>
                                 <div
                                   class="options"
@@ -7824,7 +7826,13 @@
                                 <div class="title" data-v-048a4c9f="">
                                   <span class="CItemTitle" data-v-048a4c9f=""
                                     >Festplatte</span
-                                  ><!--v-if-->
+                                  >
+                                  <button
+                                    style="display: inline"
+                                    class="button"
+                                  >
+                                    <span class="sparkle">✨</span> ask agent
+                                  </button>
                                 </div>
                                 <div
                                   class="options"
@@ -13643,6 +13651,47 @@
           layoutname="1 Column"
         >
           <style>
+            .button {
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              padding: 10px;
+              font-size: 18px;
+              font-weight: bold;
+              color: #4b0082;
+              background: white;
+              border: 2px solid transparent;
+              border-radius: 30px;
+              cursor: pointer;
+              transition: all 0.3s ease;
+              text-decoration: none;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+              font-family: Arial, sans-serif;
+              position: relative;
+            }
+
+            .button::before {
+              content: "";
+              position: absolute;
+              inset: 0;
+              padding: 2px;
+              border-radius: 30px;
+              background: linear-gradient(90deg, #00d9ff, #9b59b6);
+              -webkit-mask: linear-gradient(white, white) content-box,
+                linear-gradient(white, white);
+              -webkit-mask-composite: xor;
+              mask-composite: exclude;
+            }
+
+            .button:hover {
+              background: linear-gradient(90deg, #00d9ff, #9b59b6);
+              color: white;
+            }
+
+            .sparkle {
+              color: #00d9ff;
+              font-size: 20px;
+            }
             .cms_currency_layout {
               border: 0px solid;
               border-color: red;
@@ -19569,26 +19618,7 @@ console.log("second else No Paas");
         id="inside_tabs"
         style="position: fixed; display: block; opacity: 1"
         position="bottomright"
-      >
-        <div
-          id="inside_liveChatTab"
-          onkeydown="if(event&amp;&amp;(event.keyCode==32||event.keyCode==13)){insideFrontInterface.keyboardNavigation=true; event.target.click(); return false;}"
-          role="button"
-          aria-label="Chat"
-          tabindex="0"
-          class="inside_chat_online"
-          style="display: block; opacity: 1; width: 148px; right: 148px"
-        >
-          <img
-            class="inside_chatTabImage"
-            src="./lenovo_files/30-lenovo-emea-desktop-de-1123.svg"
-            alt="Klicken Sie auf das Live-Chat-Symbol, um den Live-Chatbereich zu öffnen."
-            style="width: auto; pointer-events: none"
-            width="148"
-            height="39"
-          />
-        </div>
-      </div>
+      ></div>
       <iframe
         allow-scripts=""
         allow="camera *; microphone *; autoplay;"
