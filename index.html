@@ -5987,7 +5987,7 @@
                                   <button
                                     style="display: inline"
                                     class="button"
-                                    onclick="clickToExplain()"
+                                    onclick="clickToExplainProcessor()"
                                   >
                                     <span class="sparkle">✨</span> ask agent
                                   </button>
@@ -7830,6 +7830,7 @@
                                   <button
                                     style="display: inline"
                                     class="button"
+                                    onclick="clickToExplainSSD()"
                                   >
                                     <span class="sparkle">✨</span> ask agent
                                   </button>
@@ -8400,7 +8401,14 @@
                                 <div class="title" data-v-048a4c9f="">
                                   <span class="CItemTitle" data-v-048a4c9f=""
                                     >Bildschirm</span
-                                  ><!--v-if-->
+                                  >
+                                  <button
+                                    style="display: inline"
+                                    class="button"
+                                    onclick="clickToExplainDisplay()"
+                                  >
+                                    <span class="sparkle">✨</span> ask agent
+                                  </button>
                                 </div>
                                 <div
                                   class="options"
@@ -19799,14 +19807,46 @@ console.log("second else No Paas");
       })();
     </script>
     <script>
-      function clickToExplain() {
-        console.log("EXPLAIN");
+      function clickToExplainProcessor() {
+        console.log("EXPLAIN processor");
         window.parent.postMessage(
           {
             type: "getit-event-bridge",
             data: {
               runTrigger: {
-                triggerId: "trigger-6e2c41c6-5970-4f94-bda0-6459d8241363",
+                triggerId: "trigger-7cf33c7d-dea3-4781-87de-b6b62f89b349",
+              },
+            },
+          },
+          "*"
+        );
+      }
+    </script>
+    <script>
+      function clickToExplainSSD() {
+        console.log("EXPLAIN SSD");
+        window.parent.postMessage(
+          {
+            type: "getit-event-bridge",
+            data: {
+              runTrigger: {
+                triggerId: "trigger-4a0317a8-2bdc-43e1-a442-e8122e58d22b",
+              },
+            },
+          },
+          "*"
+        );
+      }
+    </script>
+    <script>
+      function clickToExplainDisplay() {
+        console.log("EXPLAIN display");
+        window.parent.postMessage(
+          {
+            type: "getit-event-bridge",
+            data: {
+              runTrigger: {
+                triggerId: "trigger-d377cc1d-789e-43d1-ad86-fe7ebd3ef9ab",
               },
             },
           },
